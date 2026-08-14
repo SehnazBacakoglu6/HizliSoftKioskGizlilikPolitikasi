@@ -1,0 +1,98 @@
+# Gizlilik Politikası
+
+**Uygulama:** HizlisoftKiosk
+**Yürürlük tarihi:** [GG.AA.YYYY]
+**Son güncelleme:** [GG.AA.YYYY]
+
+Bu Gizlilik Politikası, HizlisoftKiosk uygulamasının ("Uygulama") kişisel verileri nasıl işlediğini açıklar. Uygulama, işletmelerin kendi mağaza/şube içinde kullandığı **self-servis sipariş kiosk uygulamasıdır**; son kullanıcı (müşteri) hesabı, kayıt veya giriş gerektirmez.
+
+Uygulamanın veri sorumlusu, kiosku işletmelerinde kullanan işletmedir ("İşletmeci"). Uygulamanın geliştiricisi ile ilgili iletişim bilgileri aşağıdadır.
+
+**Geliştirici / İletişim:**
+[ŞİRKET ADI]
+E-posta: [E-POSTA ADRESİ]
+Adres: [ADRES] *(isteğe bağlı)*
+
+---
+
+## 1. Uygulamanın Ne Tür Bir Uygulama Olduğu
+
+HızlıSoft Kiosk Satış, mağaza içinde sabit duran bir cihaza (kiosk) kurulan, müşterilerin dokunmatik ekrandan ürün seçip sipariş verdiği bir self-servis satış uygulamasıdır. Uygulama bir müşteri hesabı sistemi içermez; her sipariş anonim olarak işlenir.
+
+## 2. Topladığımız / İşlediğimiz Veriler
+
+### 2.1 Müşterilerden (kiosk kullanıcılarından) toplanan veriler
+Uygulama, kiosku kullanan müşteriden **ad, telefon, e-posta, adres gibi kişisel bir kimlik bilgisi talep etmez veya toplamaz.** Bir sipariş sırasında işlenen tek veri, siparişin kendisidir:
+
+- Seçilen ürünler, adetler, seçenekler/porsiyonlar ve fiyatlar
+- Sipariş notu (müşteri isterse serbest metin olarak girebileceği, örn. "acısız olsun" gibi bir not)
+- Ödeme yöntemi (nakit/kart) ve ödeme tutarı
+
+Bu veriler, işletmenin kendi arka uç sunucusuna (ERP/POS sistemine) sipariş fişi olarak kaydedilir; sipariş, sabit ve anonim bir "perakende nihai satış müşterisi" kaydı altında tutulur, gerçek isim/kimlik bilgisiyle ilişkilendirilmez.
+
+### 2.2 Ödeme verileri
+Kart ile ödemeler, uygulamanın kendisi tarafından değil, mağazada bulunan **fiziksel POS cihazı** (PavoPay veya Ödeal ödeme entegrasyonu) üzerinden gerçekleştirilir. Uygulama:
+
+- Kart numarası, son kullanma tarihi, CVV gibi kart bilgilerini **hiçbir zaman görmez, işlemez veya saklamaz.**
+- POS cihazından yalnızca işlem sonucu bilgilerini (onay kodu, işlem/fiş numarası, işlem durumu) alır ve bunları sipariş fişiyle ilişkilendirmek için işletmenin sunucusuna iletir.
+
+Nakit ödemelerde girilen tutar yalnızca para üstü hesaplamak için cihaz üzerinde geçici olarak kullanılır, kaydedilmez.
+
+### 2.3 Yerel cihaz depolaması
+Uygulama, aşağıdaki bilgileri **yalnızca kiosk cihazının kendi hafızasında** (AsyncStorage) saklar; bu bilgiler bir üçüncü tarafa gönderilmez:
+
+- İşletmecinin girdiği sunucu bağlantı ayarları (sunucu adresi vb.)
+- Performans amacıyla önbelleğe alınmış ürün/kategori listesi ve görselleri
+- Dil, tema (açık/koyu mod) ve erişilebilirlik/sesli okuma tercihleri gibi uygulama ayarları
+
+### 2.4 Sesli okuma (Text-to-Speech)
+Erişilebilirlik amacıyla uygulama, cihazın işletim sistemine kurulu metinden sese (TTS) motorunu kullanarak ekran metinlerini sesli okur. Bu işlem cihaz üzerinde çalışan sistem TTS motoru aracılığıyla yapılır; kullanılan sese ve cihaz ayarlarına bağlı olarak işletim sistemi TTS motoru (ör. cihazda yüklü Google metin okuma servisi) bu metinleri kendi gizlilik politikasına tabi olarak işleyebilir. Uygulama bu metinleri kendi sunucularına göndermez. Sesli okuma özelliği ayarlar menüsünden kapatılabilir.
+
+### 2.5 Toplamadığımız veriler
+Uygulama; konum, kamera, kişi listesi, mikrofon (ses tanıma amaçlı kayıt) gibi verilere erişmez ve bunlar için izin talep etmez. Uygulama içinde reklam, analiz (analytics) veya izleme (tracking) amaçlı hiçbir üçüncü taraf SDK kullanılmamaktadır.
+
+## 3. Verilerin Kullanım Amacı
+
+Toplanan sınırlı veriler yalnızca şu amaçlarla kullanılır:
+
+- Siparişin oluşturulması, hesaplanması (KDV dahil tutarlar) ve işletmenin satış/muhasebe sistemine kaydedilmesi
+- Ödemenin POS cihazı üzerinden tamamlanması ve fiş/işlem sonucunun sipariş kaydıyla eşleştirilmesi
+- Uygulamanın işletmeciye özel sunucu ayarlarıyla doğru çalışmasının sağlanması
+- Erişilebilirlik (sesli okuma, çoklu dil desteği) özelliklerinin sunulması
+
+## 4. Verilerin Paylaşımı
+
+- Sipariş verileri, yalnızca kioskun bağlı olduğu **işletmenin kendi sunucusuna/ERP sistemine** iletilir. Bu sunucunun işletimi ve güvenliği ilgili işletmeye aittir.
+- Kart ödeme işlem sonuçları, ödeme sağlayıcı/POS entegrasyon ortağı (PavoPay / Ödeal) ile paylaşılır; bu paylaşım yalnızca işlemin onaylanması amacıyla yapılır.
+- Veriler, yukarıdakiler dışında hiçbir üçüncü tarafla pazarlama, reklam veya benzeri amaçlarla paylaşılmaz veya satılmaz.
+
+## 5. Verilerin Saklanma Süresi
+
+- Sipariş/fiş kayıtları, işletmenin kendi sunucusunda, işletmenin yasal muhasebe ve mali mevzuat yükümlülükleri çerçevesinde saklanır. Bu kayıtların saklama süresi ve silinmesi işletmenin sorumluluğundadır.
+- Cihazda tutulan ürün önbelleği ve ayarlar, uygulama verileri temizlenene veya cihaz sıfırlanana kadar cihazda kalır.
+
+## 6. Veri Güvenliği
+
+Uygulama, sunucu ile iletişimde şifreli bağlantı (HTTPS) kullanmayı destekler; işletmecinin kurduğu sunucu ortamının güvenliği işletmeciye aittir. Kart bilgileri hiçbir aşamada uygulama tarafından işlenmediğinden, uygulama kart verisi güvenliği (PCI-DSS) kapsamı dışındadır — bu sorumluluk POS cihazı sağlayıcısına aittir.
+
+## 7. Çocukların Gizliliği
+
+Uygulama, işletme içinde genel müşteri kullanımı için tasarlanmıştır ve bilerek 13 yaş altı çocuklardan kişisel veri toplamaz.
+
+## 8. Kullanıcı Hakları
+
+Uygulama bir müşteri hesabı tutmadığından, belirli bir kişiye ait sipariş kaydına erişim, düzeltme veya silme talepleri, siparişin verildiği işletmeye (kioskun bulunduğu mağazaya) yöneltilmelidir. İşletme, kendi sunucusunda tuttuğu veriler bakımından ilgili mevzuat (ör. 6698 sayılı KVKK) kapsamında veri sorumlusudur.
+
+Uygulamanın kendisiyle (yazılım geliştirme) ilgili sorularınız için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
+
+## 9. Politikada Değişiklikler
+
+Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişiklikler bu belge üzerinden ve/veya uygulama güncellemeleri aracılığıyla duyurulur. Güncel sürüm her zaman bu sayfada yayınlanır.
+
+## 10. İletişim
+
+Bu Gizlilik Politikası hakkında sorularınız için:
+
+**[ŞİRKET ADI]**
+E-posta:hizlisoftyazilim@gmail.com
+
